@@ -3,6 +3,19 @@ import TodoItem from "./TodoItem.jsx";
 
 const TodoList = () => {
     const description = "Organize your daily tasks by maintaining them from here";
+    const list = [{
+        task: "Complete React project",
+        completed: false
+    }, {
+        task: "Review code for pull request",
+        completed: false
+    }, {
+        task: "Attend team meeting at 3 PM",
+        completed: false
+    }, {
+        task: "Update documentation",
+        completed: false
+    }];
     return (
         <>
             <div className="min-h-screen flex flex-col items-center pt-12 px-4">
@@ -14,8 +27,8 @@ const TodoList = () => {
                     </p>
 
                     <ul className="space-y-4 list-none">
-                        {[...Array(4)].map((_, index) => (
-                            <TodoItem key={index} />
+                        {list.map((item, index) => (
+                            <TodoItem task={item} key={index} />
                         ))}
                     </ul>
                 </div>
